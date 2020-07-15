@@ -22,7 +22,7 @@ function addName() {
   // - https://www.w3schools.com/jsref/prop_node_innertext.asp
 
   let nameElement = document.querySelector('#name');
-  nameElement.innerText = 'See script.js!';
+  nameElement.innerText = 'Peyton!';
 }
 
 function addFavoriteThings() {
@@ -31,6 +31,9 @@ function addFavoriteThings() {
   // 1. Get a reference to <ul id="favthings">
   // 2. Create a few list items representing your favorite things
   // 3. Add them to append them to favthings
+  let favslist = document.querySelector('#favthings')
+  favslist.innerHTML ='<ul> <li>beach</li> <li><ice cream></li> <li><sports></li> </ul>';
+  //document.body.appendChild(favthings);
 
   // See:
   //   - https://htmldog.com/guides/javascript/advanced/creatingelements/
@@ -42,7 +45,8 @@ function replaceImage() {
   console.log('Called replaceImage()');
 
   // Change the puppy picture to a picture of your choosing
-
+let newImage = document.querySelector('#picture');
+newImage.src = "https://i.pinimg.com/originals/7b/24/ba/7b24ba27b5aac57fff211e04c42d4e15.jpg";
   // See:
   // - https://www.tutorialrepublic.com/javascript-tutorial/javascript-dom-get-set-attributes.php
   // - https://www.w3schools.com/jsref/met_element_setattribute.asp
@@ -54,8 +58,14 @@ function changeCodeStatus() {
   // 1. Get a reference to <div id="codestatus">
   // 2. Create image element containing a sweet ol' meme
   // 3. Replace text in codestatus w/ image
+  let nameElement = document.querySelector('#codestatus');
+  nameElement.style.color = 'blue';
+  nameElement.innerHTML = '<img src="https://external-preview.redd.it/N_bB0Oszfuks9wLTax6viC4Hh9FzHgpMcpYiuUHoQQU.jpg?auto=webp&s=22d6a707521ffee7ea809ec405a10477ee7bd2b8">';
+
 }
 
+
+ 
 // Get a reference to the button w/ id="show-info-button"
 let showInfoButton = document.querySelector('#show-info-button');
 
@@ -82,13 +92,19 @@ showInfoButton.addEventListener('click', function() {
  */
 
 // Get a reference to form w/ id="information-form"
-let informationForm = document.querySelector('#information-form');
+//let informationForm = document.querySelector('#information-form');
 
 // Do something when form is submitted
-informationForm.addEventListener('submit', function(event) {
-  event.preventDefault(); // You will want this here. Remove it and see what changes.
 
+document.getElementById('information-form')informationForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // You will want this here. Remove it and see what changes.
   console.log('Form submitted');
+  document.querySelector(#"firstname").innerHTML  = document.querySelector("#fname").value;
+  document.querySelector(#"lastname").innerHTML  = document.querySelector("#lname").value;
+  document.querySelector(#"chosencar").innerHTML  = document.querySelector("#cars").value;
+  console.log(document.querySelector(#"cars").value)
+
+  
 
   // Your job:
   //   1. Get information typed into the form
@@ -111,28 +127,38 @@ informationForm.addEventListener('submit', function(event) {
 // then log something to the console
 
 // Fill in ________ to get a reference to the correct button on the page
-let consoleLogButton = document.querySelector('#________');
+let consoleLogButton = document.querySelector('#console-log-button');
 
 // Log something when that button is clicked
 consoleLogButton.addEventListener('click', function() {
   console.log('Change this text if you want!');
 });
 
-let makeBlueButton = document.querySelector('#________');
+let makeBlueButton = document.querySelector('#make-blue-button');
 makeBlueButton.addEventListener('click', function() {
   // Your job:
   //  1. When a user clicks "Change the text to the right blue"
+  var new_element = document.getElementById('colorText');
+  new_element.classList.add('blue');
   //  2. Change the text in <div id="colorText">...</div> to blue
+   document.getElementById('colorText').style.color = "blue";
+ 
 });
 
 // Adding an event listener to document means the "keydown" event
 // can happen anywhere on the page and we'll respond.
-document.addeventListener('keydown', function() {
+  document.addEventListener('keydown', function(e){
   // This is called whenever a user pressed any key.
-
   // Your job:
   //  1. Turn colorText red whenever a user presses the 'r' key
+  if (e.which === 82){
+  document.getElementById('colorText').style.color = "red";
+  }
   //  2. Add your own keybind somewhere
+  //If you press "esc"
+  if (e.which === 27){
+    document.body.style.backgroundColor = "green";
+  }
 
   // See:
   // - https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event
@@ -155,6 +181,10 @@ document.addeventListener('keydown', function() {
  */
 
 // Your code goes here
+document.getElementById("tdList").addEventListener('submit', function(task){
+  
+
+});
 
 /****************************************
  * Section 5 - setInterval + setTimeout *
@@ -188,3 +218,20 @@ document.addeventListener('keydown', function() {
  */
 
 // Your code goes here
+
+// let document = document.querySelector ('#helpme');
+
+// function peyton () {
+
+//   document.getElementById('clickthis').innerHTML = 'JavaScript is hard';
+//   peyton ('JavaScript is really hard')
+// }
+
+// document.addEventListener ('click', peyton(){
+//   console.log('Called makeyourown()');
+
+//   peyton()
+
+// });
+
+

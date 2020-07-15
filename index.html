@@ -11,7 +11,6 @@
 </head>
 
 <body>
-  <p>My name is Maria</p>
   <main>
     <header>
       <h1>HTML/JavaScript Drills</h1>
@@ -108,13 +107,13 @@
     <div class="container">
       <div>
         <div class="title">To Do List App</div>
-        <form class="form">
+        <form class="form" id="tdList">
 
           <div class="form-group">
             <label for="todo" class="form-check-label">What do you need to do today?</label>
             <input type="text" class="form-control" id="todo" placeholder="Go grocery shopping">
           </div>
-          <button type="submit" class="btn btn-primary">Add to To Do List</button>
+          <button type="submit" class="btn btn-primary" id="todoBtn">Add to To Do List</button>
         </form>
 
       </div>
@@ -134,6 +133,20 @@
         Here's my delayed display:<div id="delayedDisplay"></div>
       </div>
     </div>
+
+
+
+    <div class="container">
+      <div>
+      <div class="title">Make your own eventListener</div>
+
+        <p> Click anywhere in this box to see a special message...</p>
+         <p id="helpme"> </p>
+      </div>
+
+    </div>
+
+
   </main>
 
   <script src="script.js"></script>
